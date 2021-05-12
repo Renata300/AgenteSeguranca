@@ -12,9 +12,12 @@
         (Corredor corredor1)
 
         (JanelaStatus janela1 aberto)
-        
-        (PortaSala sala1 aberto)
-        (PortaSala sala2 fechado)
+
+        (Porta sala1 sala2 fechado)
+        (Porta sala2 sala1 fechado)
+
+        (Porta sala1 corredor1 fechado)
+        (Porta corredor1 sala1 fechado)
 
         (LigacaoEntidades janela1 sala1)
         (LigacaoEntidades sala1 janela1)
@@ -25,14 +28,16 @@
         (LigacaoEntidades sala1 sala2)
         (LigacaoEntidades sala2 sala1)
 
-        (PosicaoAgente sala2 )
+        (PosicaoAgente corredor1)
 
     )
     (:goal
 
         (
             and
-            (JanelaStatus janela1 fechado )
+            (JanelaStatus janela1 fechado)
+            (PosicaoAgente corredor1)
+
         )
 
     )
