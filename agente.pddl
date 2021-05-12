@@ -38,7 +38,7 @@
         )
     )
     
-    (:action entrar_local_por_corredor
+    (:action entrar_sala_por_corredor
         :parameters (?local_para_entrar ?local_atual ?porta ?aberto)
         :precondition (and
             (Corredor ?local_atual)
@@ -56,18 +56,18 @@
     )
 
     (:action entrar_local_por_sala
-        :parameters (?sala_para_entrar ?sala_atual ?porta ?aberto)
+        :parameters (?local_para_entrar ?sala_atual ?porta ?aberto)
         :precondition (and
             (Sala ?sala_atual)
             (Aberto ?aberto)
-            (Porta ?sala_atual ?sala_para_entrar ?aberto)
-            (Porta ?sala_para_entrar ?sala_atual ?aberto)
-            (LigacaoEntidades ?sala_para_entrar ?sala_atual)
-            (LigacaoEntidades ?sala_atual ?sala_para_entrar)
+            (Porta ?sala_atual ?local_para_entrar ?aberto)
+            (Porta ?local_para_entrar ?sala_atual ?aberto)
+            (LigacaoEntidades ?local_para_entrar ?sala_atual)
+            (LigacaoEntidades ?sala_atual ?local_para_entrar)
             (PosicaoAgente ?sala_atual)
         )
         :effect (and
-            (PosicaoAgente ?sala_para_entrar)
+            (PosicaoAgente ?local_para_entrar)
             (not (PosicaoAgente ?sala_atual))
         )
     )
