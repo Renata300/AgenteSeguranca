@@ -22,7 +22,7 @@
     )
 
     (:action abrir_porta
-        :parameters (?sala_para_entrar ?local_atual ?fechado ?aberto)
+        :parameters (?sala_para_entrar ?local_atual ?fechado ?aberto ?lampada ?ligado)
         :precondition (and
             (Fechado ?fechado)
             (Aberto ?aberto)
@@ -80,14 +80,20 @@
     )
 
     (:action entrar_local_por_sala
-        :parameters (?local_para_entrar ?sala_atual ?porta ?aberto ?fechado)
+        :parameters (?local_para_entrar ?sala_atual ?porta ?aberto ?fechado ?lampada ?desligado)
         :precondition (and
             (Sala ?sala_atual)
             (Aberto ?aberto)
+            (Lampada ?lampada)
+            (Desligado ?desligado)
             (Porta ?sala_atual ?local_para_entrar ?aberto)
             (Porta ?local_para_entrar ?sala_atual ?aberto)
             (LigacaoEntidades ?local_para_entrar ?sala_atual)
             (LigacaoEntidades ?sala_atual ?local_para_entrar)
+
+            (LigacaoEntidades ?sala_atual ?lampada)
+            (LigacaoEntidades ?lampada ?sala_atual)
+            (LampadaStatus ?lampada ?desligado)
             (PosicaoAgente ?sala_atual)
         )
         :effect (and
