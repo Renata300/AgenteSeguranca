@@ -61,7 +61,9 @@
             and
             (JanelaStatus janela1 fechado)
             (JanelaStatus janela2 fechado)
-
+            (JanelaStatus janela3 fechado)
+            (JanelaStatus janela4 fechado)
+            
             (PosicaoAgente corredor1)
 
         )
