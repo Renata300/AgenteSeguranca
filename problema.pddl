@@ -95,7 +95,7 @@
             (Porta sala2 sala3 fechado)
             (Porta sala3 sala2 fechado)
 
-            (PosicaoAgente sala3)
+            (PosicaoAgente corredor1)
 
         )
 
