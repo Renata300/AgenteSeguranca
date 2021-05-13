@@ -1,7 +1,7 @@
 (define (problem problema)
     (:domain agente)
     (:objects
-        sala1 sala2 sala3 sala4 janela1 janela2 janela3 janela4 lampada1 lampada2 lampada3 lampada4 corredor1 aberto fechado ligado desligado
+        sala1 sala2 sala3 janela1 janela2 janela3 janela4 lampada1 lampada2 lampada3 lampada4 corredor1 aberto fechado ligado desligado
     )
     (:init
         (Aberto aberto)
@@ -14,22 +14,21 @@
         (Sala sala1)
         (Sala sala2)
         (Sala sala3)
-        (Sala sala4)
 
         (Janela janela1)
         (Janela janela2)
         (Janela janela3)
         (Janela janela4)
 
-        (JanelaStatus janela1 aberto)
-        (JanelaStatus janela2 aberto)
-        (JanelaStatus janela3 aberto)
-        (JanelaStatus janela4 aberto)
-
         (Lampada lampada1)
         (Lampada lampada2)
         (Lampada lampada3)
         (Lampada lampada4)
+
+        (JanelaStatus janela1 aberto)
+        (JanelaStatus janela2 aberto)
+        (JanelaStatus janela3 aberto)
+        (JanelaStatus janela4 aberto)
 
         (LampadaStatus lampada1 desligado)
         (LampadaStatus lampada2 desligado)
@@ -66,11 +65,11 @@
         (LigacaoEntidades sala3 sala2)
         (LigacaoEntidades sala2 sala3)
 
-        (LigacaoEntidades janela3 sala3)
-        (LigacaoEntidades sala3 janela3)
-
         (LigacaoEntidades sala3 lampada3)
         (LigacaoEntidades lampada3 sala3)
+
+        (LigacaoEntidades janela3 sala3)
+        (LigacaoEntidades sala3 janela3)
 
         (LigacaoEntidades janela4 sala3)
         (LigacaoEntidades sala3 janela4)
