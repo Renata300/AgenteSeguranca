@@ -1,6 +1,7 @@
 ;Header and description
 
 (define (domain agente)
+    ; Esse é o problema do enunciado
 
     ;remove requirements that are not needed
     (:requirements :strips)
